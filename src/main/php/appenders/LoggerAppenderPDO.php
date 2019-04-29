@@ -194,7 +194,7 @@ class LoggerAppenderPDO extends LoggerAppender {
 			}
 			$params[] = $buffer;
 		}
-		$params = array_merge([$params[0], $params[1]], $event->getMessage());
+		$params = array_values(array_merge(array($params[0], $params[1]), $event->getMessage()));
 		return $params;
 	}
 	
